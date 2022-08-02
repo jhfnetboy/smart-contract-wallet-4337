@@ -105,7 +105,7 @@ async function main() {
         data: entrypointContract.methods.handleOps([userOperation], process.env.BENEFICIARY_ADDR).encodeABI()
     }
     let tx = new Tx(rawTx)
-    let priv = Buffer.from((process.env.SPONSER_KEY?.substring(2)) as string, 'hex')
+    let priv = Buffer.from((process.env.SPONSOR_KEY?.substring(2)) as string, 'hex')
     tx.sign(priv)
     let serializedTx = tx.serialize()
     return new Promise(function (resolve, reject) {
